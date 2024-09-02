@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 // Задание 1 (тайминг 20 минут)
 // 1. Создайте объект Person, представляющий человека, с
 // следующими свойствами: name, age и gender. Добавьте
@@ -22,7 +22,7 @@
 // 	},
 // 	changeName:function(newName){
 // 		return this.name = newName;
-// 	}	
+// 	}
 // }
 // console.log(person.name);
 // console.log(person.introduce());
@@ -40,15 +40,15 @@
 // Dog.eat = Animal.eat;
 // Dog.eat(); // Вывод: Rex is eating.
 const animal = {
-	eat: () => {
-		console.log('животное ест');
-	}
-}
+  eat: () => {
+    console.log("животное ест");
+  },
+};
 const dog = {
-	bark: () => {
-		console.log('Собака лает');
-	}
-}
+  bark: () => {
+    console.log("Собака лает");
+  },
+};
 dog.eat = animal.eat;
 dog.eat();
 // Задание 3 (call, apply 20 минут)
@@ -59,16 +59,16 @@ dog.eat();
 // console.log(calculator.add.call(null, 5, 3)); // Вывод: 8
 // console.log(calculator.subtract.apply(null, [5, 3])); // Вывод: 2
 const calculator = {
-	add: (number1, number2) => {
-		return number1 + number2;
-	},
-	subtract: (number1, number2) => {
-		return number1 - number2;
-	},
-	multiply: (number1, number2) => {
-		return number1 * number2;
-	}
-}
+  add: (number1, number2) => {
+    return number1 + number2;
+  },
+  subtract: (number1, number2) => {
+    return number1 - number2;
+  },
+  multiply: (number1, number2) => {
+    return number1 * number2;
+  },
+};
 console.log(calculator.add.call(null, 5, 3)); // Вывод: 8
 console.log(calculator.subtract.apply(null, [5, 3])); // Вывод: 2
 
@@ -79,17 +79,17 @@ console.log(calculator.subtract.apply(null, [5, 3])); // Вывод: 2
 // const person = new Person("John", 25);
 // person.introduce(); // Вывод: My name is John and I'm 25 years old.
 class Person {
-	name;
-	age;
-	constructor(name, age) {
-		this.name = name;
-		this.age = age;
-	}
-	introduce() {
-		return `My name is ${this.name} and I'm ${this.age} years old.`
-	}
+  name;
+  age;
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  introduce() {
+    return `My name is ${this.name} and I'm ${this.age} years old.`;
+  }
 }
-const person = new Person('John', 25);
+const person = new Person("John", 25);
 console.log(person.introduce());
 
 // Задание 5 (Class 30 минут)
@@ -108,23 +108,23 @@ console.log(person.introduce());
 // 1234567890
 
 class BankAccount {
-	accountNumber;
-	balance;
-	bankName = 'Kaspi';
-	constructor(accountNumber, balance) {
-		this.accountNumber = accountNumber;
-		this.balance = balance;
-	};
-	deposit(amount) {
-		this.balance += amount;
-		console.log(`Вывод: Deposited ${amount} into account 
+  accountNumber;
+  balance;
+  bankName = "Kaspi";
+  constructor(accountNumber, balance) {
+    this.accountNumber = accountNumber;
+    this.balance = balance;
+  }
+  deposit(amount) {
+    this.balance += amount;
+    console.log(`Вывод: Deposited ${amount} into account 
 					${this.accountNumber}. New balance: ${this.balance}`);
-	};
-	withdraw(amount) {
-		this.balance -= amount;
-		console.log(`Вывод: Deposited ${amount} into account 
+  }
+  withdraw(amount) {
+    this.balance -= amount;
+    console.log(`Вывод: Deposited ${amount} into account 
 					${this.accountNumber}. New balance: ${this.balance}`);
-	}
+  }
 }
 const account1 = new BankAccount("1234567890", 1000);
 account1.deposit(500);
