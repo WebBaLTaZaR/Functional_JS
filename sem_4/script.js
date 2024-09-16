@@ -13,21 +13,21 @@
 // сообщение вида "Конец программы" с помощью
 // console.log()
 
-// function wait(ms) {
-//   return new Promise((resolve) => setTimeout(resolve, ms));
-// }
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-// async function delayedMessage(message, delay) {
-//   await wait(delay);
-//   console.log(message);
-// }
-// async function main() {
-//   await delayedMessage("Сообщение 1", 2000);
-//   await delayedMessage("Сообщение 2", 1000);
-//   await delayedMessage("Сообщение 3", 3000);
-//   console.log("Конец программы");
-// }
-// main();
+async function delayedMessage(message, delay) {
+  await wait(delay);
+  console.log(message);
+}
+async function main() {
+  await delayedMessage("Сообщение 1", 2000);
+  await delayedMessage("Сообщение 2", 1000);
+  await delayedMessage("Сообщение 3", 3000);
+  console.log("Конец программы");
+}
+main();
 
 // Задание 2
 // Напишите программу, которая загружает данные с сервера с
@@ -76,13 +76,11 @@ async function getData() {
     const response = await fetch(
       "https://jsonplaceholder.typicode.com/posts/1"
     );
-    {
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-      }
-      const data = await response.json();
-      return data;
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
     }
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error("Fetch error:", error);
   }
